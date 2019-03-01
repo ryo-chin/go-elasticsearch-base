@@ -1,0 +1,24 @@
+version: "3.6"
+services:
+  mysql:
+    container_name: go-elastic-mysql
+    build: mysql
+    ports:
+      - "3309:3306"
+    volumes:
+      - ./mysql/init:/docker-entrypoint-initdb.d # For Database initialize
+    environment:
+      MYSQL_DATABASE: go_elastic_db
+      MYSQL_USER: go_elastic_user
+      MYSQL_PASSWORD: password
+  sqs:
+    container_name: go-elastic-sqs
+    build: sqs
+    ports:
+      - "9324:9324"
+  elasticsearch:
+    container_name: go-elastic-es
+    build: elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
