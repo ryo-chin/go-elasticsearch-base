@@ -9,7 +9,7 @@ $ echo 'eval "$(goenv init -)"' >> ~/.bash_profile # or ~/.zprofile
 $ source ~/.bash_profile
 # if you use zsh
 $ source ~/.zshenv
-$ ource ~/.zprofile
+$ source ~/.zprofile
 ```
 2. install dep
 dep is package management tool.
